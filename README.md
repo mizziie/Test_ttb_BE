@@ -3,6 +3,8 @@ command docker-compose up -d
 
 เมื่อโปรแกรมเริ่มรัน จะมี data json ที่เตรียมแบบสำรวจตามตัวอย่างไว้ให้อยู่แล้ว 1 ตัว
 
+ตัวอย่างการยิง API https://github.com/mizziie/postman
+
 ## Design Patterns ที่ใช้ในโปรเจค
 
 1. MVC Pattern
