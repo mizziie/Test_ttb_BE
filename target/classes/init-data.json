@@ -1,0 +1,37 @@
+{
+  "title": "แบบสำรวจความพึงพอใจ TTB Touch",
+  "description": "แบบสำรวจนี้จัดทำขึ้นเพื่อประเมินความพึงพอใจและรับฟังข้อเสนอแนะ",
+  "questions": [
+    {
+      "type": "rank",
+      "title": "จากการใช้งาน TTB Touch ท่านพึงพอใจระดับใด",
+      "settings": [
+        { "key": "require", "value": "true" },
+        { "key": "min", "value": "1" },
+        { "key": "max", "value": "5" },
+        { "key": "min_title", "value": "1 คือไม่พอใจมาก" },
+        { "key": "max_title", "value": "5 คือพอใจมาก" }
+      ]
+    },
+    {
+      "type": "radio",
+      "title": "หัวข้อไหนของ TTB Touch ที่ท่านคิดว่าควรปรับปรุงมากที่สุด",
+      "choices": [
+        { "title": "ความเร็วในการเปิด", "value": "1" },
+        { "title": "การค้นหาเมนูที่ใช้บ่อย", "value": "2" },
+        { "title": "การถอนเงินโดยไม่ใช้บัตร", "value": "3" }
+      ],
+      "settings": [
+        { "key": "require", "value": "true" }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "คำแนะนำอื่นๆ",
+      "settings": [
+        { "key": "max_length", "value": "100" },
+        { "key": "require", "value": "false" }
+      ]
+    }
+  ]
+} 

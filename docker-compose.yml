@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+
+  backend:
+    container_name: ttb-survey-backend
+    build:
+      context: . # โปรเจคปัจจุบันคือ backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:file:/data/surveydb;DB_CLOSE_DELAY=-1
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop
+      - SPRING_JPA_SHOW_SQL=true
+      - SPRING_PROFILES_ACTIVE=docker
+      - SERVER_PORT=8080
+    volumes:
+      - survey-data:/data
+    networks:
+      - survey-network
+    restart: unless-stopped
+
+volumes:
+  survey-data:
+    driver: local
+
+networks:
+  survey-network:
+    driver: bridge 
