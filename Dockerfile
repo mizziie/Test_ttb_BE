@@ -1,14 +1,11 @@
 FROM eclipse-temurin:17-jdk-alpine as build
 WORKDIR /workspace/app
 
-# ติดตั้ง Maven
 RUN apk add --no-cache maven
 
-# คัดลอกไฟล์โปรเจค
 COPY pom.xml .
 COPY src src
 
-# สร้าง JAR
 RUN mvn package -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
